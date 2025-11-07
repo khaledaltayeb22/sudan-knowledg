@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+<html lang="ar" dir="rtl">
+  <title>معرض الصور</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 2px solid #D87C2E;
+    }
+
+    .gallery h2 {
+      text-align: center;
+      color: #8B3E2F;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="شعار سودان المعرفة" class="logo">
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="destinations.html">الوجهات السياحية</a>
+      <a href="history.html">الحضارة السودانية</a>
+      <a href="gallery.html" class="active">معرض الصور</a>
+      <a href="contact.html">تواصل معنا</a>
+      <a href="about.html">من نحن</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>معرض الصور</h1>
+    <p>مجموعة مختارة من الصور التي تعكس جمال السودان وتاريخه العريق.</p>
+
+    <div class="gallery">
+      <img src="images/bajrawiya.jpg" alt="أهرامات البجراوية">
+      <img src="images/bajrawiya1.jpg" alt="أهرامات البجراوية">
+          <img src="images/jebel-marrah.jpg" alt="جبل مرة">
+          <img src="images/taka.jpg" alt="جبل التاكا">
+          <img src="images/suakin.jpg" alt="جبل مرة">
+         <img src="images/bajrawiya1.jpg" alt="مدينة سواكن">
+         <img src="images/blue-nile.jpg" alt="النيل الأزرق">
+         <img src="images/gezirah.jpg" alt="ولاية الجزيرة">
+        <img src="images/taharqa.jpg" alt="تهراقا">
+        <img src="images/noba.jpg" alt="نوبا">
+        <img src="images/temsal.jpg" alt="تمثال">
+        <img src="images/terhaga.jpg" alt="ترهاقا">
+        <img src="images/swakin1.jpg" alt="سواكن">
+        <img src="images/swakin.jpg" alt="سواكن1">
+     <img src="images/osman.jpg" alt="عثمان">
+        <img src="images/abdallh.jpg" alt="عبدالله">
+       <img src="images/ali-dinar.jpg" alt="دينار">
+       <img src="images/altayeb_salih.jpg" alt="الطيب صالح">
+       <img src="images/fatema.jpg" alt="فاطمة">
+
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 سودان المعرفة</p>
+  </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll("img");
+    images.forEach(img => {
+      img.addEventListener("load", () => {
+        img.classList.add("loaded");
+      });
+      if (img.complete) {
+        img.classList.add("loaded");
+      }
+    });
+  });
+</script>
+</body>
+</html>
+<script>
+  document.querySelectorAll("a").forEach(link => {
+    if (link.href && link.target !== "_blank") {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = this.href;
+        }, 500);
+      });
+    }
+  });
+</script>

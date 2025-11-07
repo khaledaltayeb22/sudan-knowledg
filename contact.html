@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+<html lang="ar" dir="rtl">
+  <title>تواصل معنا</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="شعار سودان المعرفة" class="logo">
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="destinations.html">الوجهات السياحية</a>
+      <a href="history.html">الحضارة السودانية</a>
+      <a href="contact.html" class="active">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>تواصل معنا</h1>
+    <p>إذا كان لديك أي استفسار أو اقتراح، يسعدنا أن تتواصل معنا عبر النموذج التالي:</p>
+
+    <form class="contact-form">
+      <label for="name">الاسم الكامل:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">البريد الإلكتروني:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">الرسالة:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">إرسال</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 سودان المعرفة</p>
+  </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll("img");
+    images.forEach(img => {
+      img.addEventListener("load", () => {
+        img.classList.add("loaded");
+      });
+      if (img.complete) {
+        img.classList.add("loaded");
+      }
+    });
+  });
+</script>
+</body>
+</html>
+<script>
+  document.querySelectorAll("a").forEach(link => {
+    if (link.href && link.target !== "_blank") {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = this.href;
+        }, 500);
+      });
+    }
+  });
+</script>

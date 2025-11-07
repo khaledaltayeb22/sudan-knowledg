@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>خريطة السودان السياحية</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    #map {
+      height: 600px;
+      width: 100%;
+    }
+    body {
+      font-family: 'Amiri', serif;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="text-align:center; padding:20px; color:#8B3E2F;">خريطة الوجهات السياحية في السودان</h2>
+  <div id="map"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    const map = L.map('map').setView([15.5007, 32.5599], 5); // وسط السودان
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // نقاط الوجهات السياحية
+    const destinations = [
+      {
+        name: "أهرامات مروي",
+        coords: [16.937, 33.743],
+        image: "images/meroe1.jpg",
+        description: "أهرامات نوبية تاريخية شمال الخرطوم"
+      },
+      {
+        name: "مدينة سواكن",
+        coords: [19.106, 37.332],
+        image: "images/suakin.jpg",
+        description: "مدينة ساحلية تاريخية على البحر الأحمر"
+      },
+
+{
+        name: "جامعة بخت الرضا",
+        coords: [14.017, 32.309],
+        image: "images/radda.jpg",
+        description: "يرتبط الحديث عن دور بخت الرضا في تطوير التعليم في السودان  "
+      },
+
+
+      {
+        name: "جبل مرة",
+        coords: [12.95, 24.27],
+        image: "images/jebel-marrah.jpg",
+        description: "منطقة جبلية خلابة غرب السودان"
+      },
+{
+        name: "جامعة الخرطوم",
+        coords: [15.60, 32.53],
+        image: "images/khaled-edu.jpg",
+        description: "صرح تعليمي عظيم من افضل الجامعات فى أفريقيا و الوطن العربي"
+      },
+{
+        name: "جبل التاكا ",
+        coords: [15.45 , 36.37],
+        image: "images/taka.jpg",
+        description: "جبال التاكا هي جبال تقع في مدينة كسلا السودانية تتميز الجبال بتضاريسها الوعرة والجبال الشاهقة"
+      },
+
+{
+        name: "جبل البركل",
+        coords: [18.53 , 31.83],
+        image: "images/albrkal.jpg",
+        description: "جبل البركل يرمز ال اصل الحضارة فى شمال السودان و به معبد الملك تهراقا"
+      },
+      {
+        name: "نهر النيل",
+        coords: [15.6, 32.5],
+        image: "images/nile.jpg",
+        description: "شريان الحياة في السودان"
+      }
+    ];
+
+    destinations.forEach(dest => {
+      const popupContent = `
+        <h3>${dest.name}</h3>
+        <img src="${dest.image}" alt="${dest.name}" style="width:100%; border-radius:8px; margin:10px 0;">
+        <p>${dest.description}</p>
+      `;
+      L.marker(dest.coords).addTo(map).bindPopup(popupContent);
+    });
+  </script>
+
+</body>
+</html>

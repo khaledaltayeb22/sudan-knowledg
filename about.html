@@ -1,0 +1,82 @@
+ <!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>من نحن</title>
+<html lang="ar" dir="rtl">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="شعار سودان المعرفة" class="logo">
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="destinations.html">الوجهات السياحية</a>
+      <a href="history.html">الحضارة السودانية</a>
+      <a href="gallery.html">معرض الصور</a>
+      <a href="contact.html">تواصل معنا</a>
+      <a href="about.html" class="active">من نحن</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>من نحن</h1>
+    <p>سودان المعرفة هو موقع تعليمي وثقافي يهدف إلى تعريف العالم بحضارة السودان العريقة، ومعالمه السياحية الفريدة.</p>
+
+    <h2>قيادة الفريق</h2>
+    <p>يقود فريق "سودان المعرفة" المهندس <strong>خالد الطيب إبراهيم</strong>، وهو مهندس شغوف بالتقنية والتعليم، يتمتع برؤية واضحة لنقل حضارة السودان إلى العالم بأسلوب عصري ومبتكر.  
+    يؤمن بأن المعرفة هي جسر بين الماضي والمستقبل، ويعمل مع فريقه على بناء محتوى تعليمي وسياحي يعكس جمال السودان وتاريخه العريق.</p>
+
+    <h2>رؤيتنا</h2>
+    <p>نشر الوعي العالمي بتاريخ السودان وثقافته، وتعزيز السياحة الداخلية والخارجية من خلال محتوى تعليمي جذاب.</p>
+
+    <h2>رسالتنا</h2>
+    <p>تقديم معلومات دقيقة وموثوقة عن الوجهات السياحية والمواقع الأثرية، بأسلوب عصري يناسب جميع الأعمار.</p>
+
+    <h2>فريق العمل</h2>
+    <p>يتكوّن الفريق من مجموعة من الشباب السودانيين المتخصصين في تطوير الواجهات الأمامية، إدارة المحتوى، التصميم الجرافيكي، والبحث التاريخي.  
+    يعملون بروح جماعية على تطوير الموقع وتحديثه باستمرار ليكون مرجعًا موثوقًا ومصدر إلهام لكل من يهتم بالسودان.</p>
+    <hr>
+    <section class="signature">
+      <p><strong>مع خالص التحية،</strong></p>
+      <p>المهندس خالط الطيب إبراهيم<br>قائد فريق سودان المعرفة</p>
+    </section>
+<hr>
+<section class="signature">
+  <p><strong>مع خالص التحية،</strong></p>
+  <p>المهندس خالط الطيب إبراهيم</p>
+  <img src="images/signature-khaled.png" alt="توقيع المهندس خالط الطيب إبراهيم" class="signature-img">
+</section>
+  </main>
+
+  <footer>
+    <p>© 2025 سودان المعرفة</p>
+  </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll("img");
+    images.forEach(img => {
+      img.addEventListener("load", () => {
+        img.classList.add("loaded");
+      });
+      if (img.complete) {
+        img.classList.add("loaded");
+      }
+    });
+  });
+</script>
+</body>
+</html>
+<script>
+  document.querySelectorAll("a").forEach(link => {
+    if (link.href && link.target !== "_blank") {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = this.href;
+        }, 500);
+      });
+    }
+  });
+</script>

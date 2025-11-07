@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+<html lang="ar" dir="rtl">
+  <title>شخصيات سودانية</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .figures-section {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+
+    .figure-card {
+      background-color: #FDF8F3;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
+    }
+
+    .figure-card h3 {
+      color: #8B3E2F;
+      margin-bottom: 10px;
+    }
+
+    .figure-card p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/logo.png" alt="شعار سودان المعرفة" class="logo">
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="destinations.html">الوجهات السياحية</a>
+      <a href="history.html">الحضارة السودانية</a>
+      <a href="gallery.html">معرض الصور</a>
+      <a href="videos.html">فيديوهات</a>
+      <a href="figures.html" class="active">شخصيات سودانية</a>
+      <a href="contact.html">تواصل معنا</a>
+      <a href="about.html">من نحن</a>
+    </nav>
+  </header>
+
+  <main class="figures-section">
+    <h1>شخصيات سودانية بارزة</h1>
+    <p>هنا نسلط الضوء على أعلام السودان الذين تركوا بصمة في التاريخ، الأدب، السياسة، والفن.</p>
+
+    <div class="figure-card">
+<img src="images/altayeb_salih.jpg" alt="السلطان علي دينار" style="width:100%; border-radius:8px; margin-bottom:10px;">
+      <h3>الطيب صالح</h3>
+      <p>روائي سوداني عالمي، اشتهر بروايته "موسم الهجرة إلى الشمال"، ويُعد من أبرز الكتاب العرب في القرن العشرين.</p>
+    </div>
+
+    <div class="figure-card">
+<img src="images/fatema.jpg" alt="السلطان علي دينار" style="width:100%; border-radius:8px; margin-bottom:10px;">
+      <h3>فاطمة أحمد إبراهيم</h3>
+      <p>أول امرأة تُنتخب في البرلمان السوداني، ومناضلة في مجال حقوق المرأة، وعضو مؤسس في الاتحاد النسائي السوداني.</p>
+    </div>
+
+    <div class="figure-card">
+<img src="images/ali-dinar.jpg" alt="السلطان علي دينار" style="width:100%; border-radius:8px; margin-bottom:10px;">
+      <h3>علي دينار</h3>
+      <p>آخر سلاطين سلطنة دارفور، قاوم الاستعمار البريطاني، ويُعد رمزًا للسيادة الوطنية في غرب السودان.</p>
+    </div>
+
+    <div class="figure-card">
+<img src="images/abdallh.jpg" alt="السلطان علي دينار" style="width:100%; border-radius:8px; margin-bottom:10px;">
+      <h3>عبدالله الطيب</h3>
+      <p>أديب ومفكر سوداني، له مساهمات كبيرة في الأدب العربي، وكان أستاذًا جامعيًا ومترجمًا للقرآن الكريم.</p>
+    </div>
+
+    <div class="figure-card">
+<img src="images/osman.jpg" alt="السلطان علي دينار" style="width:100%; border-radius:8px; margin-bottom:10px;">
+      <h3>عثمان دقنة</h3>
+      <p>قائد بارز في الثورة المهدية، اشتهر بشجاعته في مقاومة الاحتلال البريطاني في شرق السودان.</p>
+    </div>
+ 
+  </main>
+
+  <footer>
+    <p>© 2025 سودان المعرفة</p>
+  </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll("img");
+    images.forEach(img => {
+      img.addEventListener("load", () => {
+        img.classList.add("loaded");
+      });
+      if (img.complete) {
+        img.classList.add("loaded");
+      }
+    });
+  });
+</script>
+</body>
+</html>
+<script>
+  document.querySelectorAll("a").forEach(link => {
+    if (link.href && link.target !== "_blank") {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        document.body.classList.add("fade-out");
+        setTimeout(() => {
+          window.location.href = this.href;
+        }, 500);
+      });
+    }
+  });
+</script>
